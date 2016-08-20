@@ -1,0 +1,8 @@
+#!/bin/bash
+
+set -e
+
+packer build -force \
+  -var "ssh_pubkey=$(<~/.ssh/id_rsa.pub)" \
+  -var "password=$(od -vAn -N8 -tu8 < /dev/urandom | cut -f 2 -d ' ')" \
+  packer.json
