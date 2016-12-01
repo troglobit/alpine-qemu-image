@@ -9,4 +9,5 @@ QEMU=$(which qemu 2>/dev/null || which qemu-system-x86_64 2>/dev/null)
 
 $QEMU -hda alpine-kernel-dev/alpine-kernel-dev \
   -net nic -net bridge,br=br0 \
-  -m 2GB -s $KERNEL_PART
+  -m 2GB -s $KERNEL_PART \
+  -nographic
