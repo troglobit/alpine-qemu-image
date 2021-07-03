@@ -15,6 +15,7 @@
 	"disk_size": 5000,
 	"format": "qcow2",
 	"headless": false,
+	"use_default_display": true,
 	"accelerator": "kvm",
 	"ssh_host_port_min": 2222,
 	"ssh_host_port_max": 2229,
