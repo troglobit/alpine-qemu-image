@@ -1,6 +1,6 @@
 {
     "variables": {
-	"password": "",
+	"password": "secret",
 	"ssh_pubkey": ""
     },
     "builders":
@@ -22,7 +22,7 @@
 	"ssh_username": "root",
 	"ssh_password": "{{user `password`}}",
 	"ssh_port": 22,
-	"ssh_wait_timeout": "30s",
+	"ssh_wait_timeout": "300s",
 	"vm_name": "alpine-kernel-dev",
 	"net_device": "virtio-net",
 	"disk_interface": "virtio",
