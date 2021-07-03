@@ -23,7 +23,7 @@ jobs:
           cache-
     - name: Install dependencies ...
       run: |
-        sudo apt-get -y install packer qemu-system-x86
+        sudo apt-get -y install packer qemu-system-x86 qemu-kvm
     - name: Build image ...
       run: |
         packer fix packer.json > host.json
