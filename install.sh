@@ -16,8 +16,8 @@ DNSOPTS="-d example.com 8.8.8.8"
 TIMEZONEOPTS="-z UTC"
 PROXYOPTS="none"
 APKREPOSOPTS="-f"
-SSHDOPTS="-c openssh"
-NTPOPTS="-c openntpd"
+SSHDOPTS="-c dropbear"
+NTPOPTS="-c busybox"
 DISKOPTS="-v -m sys /dev/vda"
 EOF
 
