@@ -26,7 +26,7 @@ jobs:
         sudo apt-get -y install packer qemu-system-x86 qemu-kvm
     - name: Build image ...
       run: |
-        packer fix packer.json > host.json
+        packer fix packer.json |sed '/kvm/d' > host.json
         packer build -force host.json
     - uses: actions/upload-artifact@v2
       with:
