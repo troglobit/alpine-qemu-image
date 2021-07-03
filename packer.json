@@ -12,7 +12,7 @@
 	"iso_checksum_type": "sha256",
 	"output_directory": "images",
 	"shutdown_command": "poweroff",
-	"disk_size": 5000,
+	"disk_size": 2000,
 	"format": "qcow2",
 	"headless": false,
 	"use_default_display": true,
