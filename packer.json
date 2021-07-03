@@ -43,8 +43,10 @@
 	{
 	    "type": "shell",
 	    "script": "install.sh",
-	    "environment_vars": ["ROOT_PASSWORD={{user `password`}}",
-				 "SSH_PUBKEY={{user `ssh_pubkey`}}"]
+	    "environment_vars": [
+		"ROOT_PASSWORD={{user `password`}}",
+		"SSH_PUBKEY={{user `ssh_pubkey`}}"
+	    ]
 	}
     ]
 }
