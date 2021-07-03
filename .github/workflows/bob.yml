@@ -24,7 +24,8 @@ jobs:
         sudo apt-get -y install packer qemu-system-x86
     - name: Build image ...
       run: |
-        packer build -force packer.json
+        packer fix packer.json > host.json
+        packer build -force hos.json
     - uses: actions/upload-artifact@v2
       with:
         name: alpine-qemu-image
