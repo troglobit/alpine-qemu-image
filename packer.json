@@ -16,13 +16,14 @@
       "disk_interface": "virtio",
       "disk_size": 2000,
       "format": "qcow2",
-      "headless": false,
+      "headless": true,
       "iso_checksum": "4dff2a8386a32d83b3ce34137fe991073617b3c920b2ed069e0e6e55fea96cff",
       "iso_checksum_type": "sha256",
       "iso_url": "https://dl-cdn.alpinelinux.org/alpine/v3.13/releases/x86_64/alpine-standard-3.13.1-x86_64.iso",
       "net_device": "virtio-net",
       "output_directory": "images",
       "shutdown_command": "poweroff",
+      "ssh_handshake_attempts": 20,
       "ssh_host_port_max": 2229,
       "ssh_host_port_min": 2222,
       "ssh_password": "{{user `password`}}",
@@ -30,6 +31,11 @@
       "ssh_username": "root",
       "ssh_wait_timeout": "300s",
       "type": "qemu",
+      "qemuargs": [
+        [
+	  "-device", "virtio-net,netdev=user.0"
+	]
+      ],
       "use_default_display": true,
       "vm_name": "alpine-313.qcow2"
     }
