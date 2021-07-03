@@ -26,7 +26,7 @@
 	"vm_name": "alpine-313.qcow2",
 	"net_device": "virtio-net",
 	"disk_interface": "virtio",
-	"boot_wait": "5s",
+	"boot_wait": "10s",
 	"boot_command":
 	[
             "root<enter>",
