@@ -5,14 +5,14 @@
 
 cat > alpine-answers <<EOF
 KEYMAPOPTS="us us"
-HOSTNAMEOPTS="-n alpine-kernel-dev"
+HOSTNAMEOPTS="-n alpine"
 # todo: make this configurable
 INTERFACESOPTS="auto lo
 iface lo inet loopback
 
 auto eth0
 iface eth0 inet dhcp
-      hostname alpine-kernel-dev
+      hostname alpine
 "
 
 DNSOPTS="-d example.com 8.8.8.8"
@@ -37,11 +37,7 @@ auto lo
 iface lo inet loopback
 
 auto eth0
-iface eth0 inet static
-      address 10.0.66.2
-      netmask 255.255.255.0
-      gateway 10.0.66.1
-      hostname alpine-kernel-dev
+iface eth0 inet dhcp
 EOF
 mkdir -p /mnt/root/.ssh/
 cat >> /mnt/root/.ssh/authorized_keys <<EOF
