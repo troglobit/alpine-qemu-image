@@ -16,7 +16,7 @@ jobs:
     - uses: actions/cache@v2
       with:
         path: packer_cache/
-        key: cache-${{ hashFiles(packer_cache/*) }}
+        key: cache-${{ hashFiles('packer_cache/*') }}
         restore-keys: |
           cache-
     - name: Install dependencies ...
