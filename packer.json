@@ -32,6 +32,7 @@
 	    "passwd<enter>{{user `password`}}<enter>{{user `password`}}<enter>",
 	    "apk add openssh<enter>",
 	    "echo 'PermitRootLogin yes' >> /etc/ssh/sshd_config<enter>",
+	    "ifconfig lo up<enter>",
 	    "ifconfig eth0 up && udhcpc -i eth0<enter>",
 	    "/etc/init.d/sshd start<enter><wait>"
 	]
