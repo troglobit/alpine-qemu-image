@@ -7,7 +7,6 @@ fi
 
 QEMU=$(which qemu 2>/dev/null || which qemu-system-x86_64 2>/dev/null)
 
-$QEMU -hda alpine-kernel-dev/alpine-kernel-dev \
-  -net nic -net bridge,br=br0 \
-  -m 2GB -s $KERNEL_PART \
-  -nographic
+$QEMU -M q35 -enable-kvm -hda images/alpine-313.qcow2 \
+  -net nic -net bridge,br=virbr0 \
+  -m 2G -s $KERNEL_PART
