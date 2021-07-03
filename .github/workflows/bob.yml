@@ -25,7 +25,7 @@ jobs:
     - name: Build image ...
       run: |
         packer fix packer.json > host.json
-        packer build -force hos.json
+        packer build -force host.json
     - uses: actions/upload-artifact@v2
       with:
         name: alpine-qemu-image
