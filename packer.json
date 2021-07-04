@@ -12,7 +12,7 @@
         "udhcpc -i eth0<enter>",
         "/etc/init.d/sshd start<enter><wait>"
       ],
-      "boot_wait": "30s",
+      "boot_wait": "60s",
       "disk_interface": "virtio",
       "disk_size": 2000,
       "format": "qcow2",
