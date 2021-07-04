@@ -37,7 +37,8 @@ jobs:
           docker tag $IMAGE_NAME $IMAGE_ID:$VERSION
           docker push $IMAGE_ID:$VERSION
   build:
-    runs-on: ubuntu-20.04
+    needs: docker
+    runs-on: ubuntu-latest
     container:
       image: ghcr.io/troglobit/alpine-qemu-image:main
     steps:
@@ -48,9 +49,6 @@ jobs:
         key: cache-${{ hashFiles('packer_cache/*') }}
         restore-keys: |
           cache-
-    - name: Install dependencies ...
-      run: |
-        sudo apt-get -y install packer qemu-system-x86 qemu-kvm
     - name: Build image ...
       run: |
         packer fix packer.json |sed '/kvm/d' > host.json
