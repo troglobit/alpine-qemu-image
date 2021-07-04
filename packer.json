@@ -12,7 +12,7 @@
         "udhcpc -i eth0<enter>",
         "/etc/init.d/sshd start<enter><wait>"
       ],
-      "boot_wait": "10s",
+      "boot_wait": "30s",
       "disk_interface": "virtio",
       "disk_size": 2000,
       "format": "qcow2",
@@ -31,11 +31,6 @@
       "ssh_username": "root",
       "ssh_wait_timeout": "300s",
       "type": "qemu",
-      "qemuargs": [
-        [
-	  "-device", "virtio-net,netdev=user.0"
-	]
-      ],
       "use_default_display": true,
       "vm_name": "alpine-313.qcow2"
     }
