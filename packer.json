@@ -32,6 +32,7 @@
       "ssh_wait_timeout": "300s",
       "type": "qemu",
       "use_default_display": true,
+      "vnc_bind_address": "0.0.0.0",
       "vm_name": "alpine-313.qcow2"
     }
   ],
