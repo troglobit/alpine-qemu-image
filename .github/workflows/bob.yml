@@ -37,10 +37,9 @@ jobs:
           docker tag $IMAGE_NAME $IMAGE_ID:$VERSION
           docker push $IMAGE_ID:$VERSION
   build:
-    needs: docker
     runs-on: ubuntu-20.04
     container:
-      image: troglobit/alpine-qemu-image
+      image: troglobit/alpine-qemu-image:main
     steps:
     - uses: actions/checkout@v2
     - uses: actions/cache@v2
