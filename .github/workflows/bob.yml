@@ -39,7 +39,7 @@ jobs:
   build:
     runs-on: ubuntu-20.04
     container:
-      image: troglobit/alpine-qemu-image:main
+      image: ghcr.io/troglobit/alpine-qemu-image:main
     steps:
     - uses: actions/checkout@v2
     - uses: actions/cache@v2
