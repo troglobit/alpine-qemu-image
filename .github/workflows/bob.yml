@@ -22,7 +22,7 @@ jobs:
         restore-keys: |
           cache-
     - name: Packer build
-      uses: enr0s/packer-qemu-action@v1.0
+      uses: enr0s/packer-qemu-action@v0.2
       with:
         templateFile: 'packer.json'
         workingDir: '.'
