@@ -12,7 +12,7 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
     steps:
     - uses: actions/checkout@v2
     - uses: actions/cache@v2
@@ -21,8 +21,14 @@ jobs:
         key: cache-${{ hashFiles('packer_cache/*') }}
         restore-keys: |
           cache-
-    - name: Packer build
-      uses: enr0s/packer-qemu-action@v0.2
+    - name: Install dependencies ...
+      run: |
+        sudo apt-get -y install packer qemu-system-x86 qemu-kvm
+    - name: Build image ...
+      run: |
+        packer fix packer.json |sed '/kvm/d' > host.json
+        packer build -force host.json
+    - uses: actions/upload-artifact@v2
       with:
-        templateFile: 'packer.json'
-        workingDir: '.'
+        name: alpine-qemu-image
+        path: images/*
