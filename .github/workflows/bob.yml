@@ -13,6 +13,8 @@ env:
 jobs:
   build:
     runs-on: ubuntu-20.04
+    container:
+      image: troglobit/alpine-qemu-image
     steps:
     - uses: actions/checkout@v2
     - uses: actions/cache@v2
