@@ -21,14 +21,8 @@ jobs:
         key: cache-${{ hashFiles('packer_cache/*') }}
         restore-keys: |
           cache-
-    - name: Install dependencies ...
-      run: |
-        sudo apt-get -y install packer qemu-system-x86 qemu-kvm
-    - name: Build image ...
-      run: |
-        packer fix packer.json |sed '/kvm/d' > host.json
-        packer build -force host.json
-    - uses: actions/upload-artifact@v2
+    - name: Packer build
+      uses: enr0s/packer-qemu-action@v1.0
       with:
-        name: alpine-qemu-image
-        path: images/*
+        templateFile: 'packer.json'
+        workingDir: '.'
