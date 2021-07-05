@@ -1,3 +1,5 @@
 *~
+packer_cache/*.iso.lock
 packer_cache/*.iso
+packer_cache/port/
 images/*
