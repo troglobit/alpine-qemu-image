@@ -25,10 +25,12 @@ jobs:
       run: |
         sudo apt-get -y install packer qemu-system-x86 qemu-kvm
     - name: Build image ...
+      # GitHub doesn't support kvm in actions yet because it runs on ds2
+      # hence the loooooong boot_wait of 180 sec, due to only accel=tcg
       run: |
-        packer fix packer.json > host.json
+        packer fix packer.json |sed '/kvm/d' > host.json
         packer build -force host.json
     - uses: actions/upload-artifact@v2
       with:
-        name: alpine-qemu-image
+        name: alpine-qemu-image.zip
         path: images/*
