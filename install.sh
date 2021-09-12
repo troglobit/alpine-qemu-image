@@ -44,4 +44,8 @@ cat > /etc/resolv.conf <<EOF
 nameserver 8.8.8.8
 EOF
 
+# Enable serial console at boot and for login
+sed -i 's/#ttyS0/ttyS0/' /etc/inittab
+sed -i 's/serial_port=/serial_port=ttyS0/; s/quiet/quiet console=ttyS0,115200/' /etc/update-extlinux.conf
+
 umount /dev/vda3
