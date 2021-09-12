@@ -21,7 +21,7 @@ jobs:
         key: cache-${{ hashFiles('packer_cache/*') }}
         restore-keys: |
           cache-
-    - name: Installing dependencies
+    - name: Installing dependencies ...
       run: |
         sudo apt-get -y install packer qemu-system-x86
     - name: Build image ...
