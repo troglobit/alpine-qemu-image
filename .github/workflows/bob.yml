@@ -23,7 +23,7 @@ jobs:
           cache-
     - name: Installing dependencies
       run: |
-        sudo apt-get -y install packer qemu-system-x86 qemu-kvm
+        sudo apt-get -y install packer qemu-system-x86
     - name: Build image ...
       # GitHub doesn't support kvm in actions yet because it runs on ds2
       # hence the loooooong boot_wait of 180 sec, due to only accel=tcg
