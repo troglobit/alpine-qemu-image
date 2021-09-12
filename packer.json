@@ -19,7 +19,7 @@
       "headless": true,
       "iso_checksum": "4dff2a8386a32d83b3ce34137fe991073617b3c920b2ed069e0e6e55fea96cff",
       "iso_checksum_type": "sha256",
-      "iso_url": "https://dl-cdn.alpinelinux.org/alpine/v3.13/releases/x86_64/alpine-standard-3.13.1-x86_64.iso",
+      "iso_url": "https://dl-cdn.alpinelinux.org/alpine/v3.13/releases/x86_64/alpine-standard-3.13.6-x86_64.iso",
       "net_device": "virtio-net",
       "output_directory": "images",
       "shutdown_command": "poweroff",
