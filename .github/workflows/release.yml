@@ -30,12 +30,11 @@ jobs:
     runs-on: ubuntu-latest
     if: startsWith(github.ref, 'refs/tags/')
     steps:
-      - name: Checkout tree ...
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
       - uses: actions/cache@v2
         with:
           path: packer_cache/
-          key: cache-${{ hashFiles(packer_cache/*) }}
+          key: cache-${{ hashFiles('packer_cache/*') }}
           restore-keys: |
             cache-
       - name: Install dependencies ...
