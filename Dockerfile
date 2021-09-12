@@ -11,7 +11,7 @@ RUN echo "https://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repo
     echo "alias poweroff='kill 1'" >> /etc/profile
 
 # Whenever possible, install tools using the distro package manager
-RUN apk add --quiet --no-cache tini packer qemu-system-x86_64 qemu-img git openssh-keygen
+RUN apk add --quiet --no-cache tini packer qemu-system-x86_64 qemu-img git openssh-keygen iproute2 tcpdump
 
 #COPY samples/ /samples
 
