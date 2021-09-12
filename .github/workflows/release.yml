@@ -45,7 +45,7 @@ jobs:
         # hence the loooooong boot_wait of 180 sec, due to only accel=tcg
         run: |
           packer fix packer.json |sed '/kvm/d' > host.json
-          packer build -force packer.json
+          packer build -force host.json
       - name: Upload release artifacts ...
         uses: skx/github-action-publish-binaries@release-0.15
         env:
