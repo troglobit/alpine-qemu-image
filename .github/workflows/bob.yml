@@ -32,5 +32,5 @@ jobs:
         packer build -force host.json
     - uses: actions/upload-artifact@v2
       with:
-        name: alpine-qemu-image.zip
+        name: alpine-qemu-image
         path: images/*
